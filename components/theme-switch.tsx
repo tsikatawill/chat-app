@@ -23,7 +23,7 @@ export const ThemeSwitch = () => {
   }, [theme]);
 
   return (
-    <div className="p-1.5 bg-[#F2F2F2] rounded-full flex items-center gap-1">
+    <div className="p-1.5 bg-[#F2F2F2] dark:bg-[#242424] rounded-full flex items-center gap-1">
       <RoundThingy
         state="light"
         active={theme === "light"}
@@ -59,8 +59,10 @@ function RoundThingy({
     <button
       onClick={action}
       className={cn(
-        "size-8 shrink-0 rounded-full transition-all duration-300 ease-in-out grid place-content-center p-4 cursor-pointer",
-        active ? "bg-white shadow-md shadow-slate-200 " : "bg-transparent"
+        "size-8 shrink-0 rounded-full transition-all duration-300 ease-in-out grid place-content-center p-4 cursor-pointer text-gray-400 dark:text-white/50",
+        active
+          ? "bg-white dark:bg-[#141414] shadow-md shadow-slate-200 dark:shadow-none text-black dark:text-white"
+          : "bg-transparent"
       )}
     >
       {icons[state]}

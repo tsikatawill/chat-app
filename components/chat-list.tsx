@@ -1,20 +1,29 @@
 "use client";
-import { useRef, useLayoutEffect, useState } from "react";
+import {
+    useRef,
+    useLayoutEffect,
+    useState,
+    useOptimistic,
+    useEffect,
+} from "react";
 import { ChatItem } from "./chat-item";
 import { Chat } from "@prisma/client";
 import SupabaseListener from "./SupabaseListener";
-
+import useChatStore from "@/lib/store/chat-store";
+import { clear } from "console";
 function ChatList({ initialChatList }: { initialChatList: Chat[] }) {
     const chatListRef = useRef<HTMLDivElement>(null);
     const [chatList, setChatList] = useState<Chat[]>(initialChatList);
+    const { pendingChats, clearPendingChats } = useChatStore();
 
     useLayoutEffect(() => {
         if (chatListRef.current) {
             chatListRef.current.scrollTop = chatListRef.current.scrollHeight;
         }
-    }, [chatList]);
+    }, [chatList, pendingChats]);
 
     function handlePayload(payload: Chat) {
+        clearPendingChats();
         setChatList((prev) => [...prev, payload]);
     }
 
@@ -25,6 +34,9 @@ function ChatList({ initialChatList }: { initialChatList: Chat[] }) {
                 ref={chatListRef}
             >
                 {chatList.map((chat) => (
+                    <ChatItem key={chat.id} {...chat} />
+                ))}
+                {pendingChats.map((chat) => (
                     <ChatItem key={chat.id} {...chat} />
                 ))}
             </div>
