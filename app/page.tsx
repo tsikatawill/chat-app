@@ -1,10 +1,7 @@
 import { ChatArea } from "@/components/chat-area";
-import { getMessages } from "@/actions/chat-actions";
 import ChatHeader from "@/components/chat-header";
 
 export default async function Home() {
-    const data = await getMessages();
-
     return (
         <>
             <ChatHeader />
@@ -15,7 +12,7 @@ export default async function Home() {
                         "url(images/main-bg.jpg) center center/cover no-repeat",
                 }}
             >
-                <ChatArea chatList={data} />
+                <ChatArea />
                 <p className="text-center py-6">Built with ❤️ by Team Wazaaa</p>
             </div>
         </>
