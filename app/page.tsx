@@ -3,7 +3,7 @@ import { getMessages } from "@/actions/chat-actions";
 import ChatHeader from "@/components/chat-header";
 
 export default async function Home() {
-    const data = await getMessages();
+  const data = await getMessages();
 
     return (
         <>
