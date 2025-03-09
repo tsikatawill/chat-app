@@ -27,16 +27,22 @@ export const ChatForm = () => {
     <form
       onSubmit={handleSubmit}
       ref={formRef}
-      className="flex p-3 items-center gap-4 w-full bg-whit bg-white rounded-full"
+      className="flex p-3 items-center gap-4 w-full dark:bg-[#1C1C1C] bg-white rounded-full"
     >
       <Input
         type="text"
         name="message"
         placeholder="Type a message"
-        className="border-none focus-visible:ring-0 shadow-none py-0 h-auto"
+        className="border-none dark:placeholder:text-white/30 focus-visible:ring-0 shadow-none py-0 h-auto"
       />
-      <Button className="rounded-full shrink-0 size-8 p-2">
-        <Image src="images/send-02.svg" width={20} height={20} alt="." />
+      <Button className="rounded-full shrink-0 size-8 p-2 dark:invert">
+        <Image
+          className="dark:invert"
+          src="images/send-02.svg"
+          width={20}
+          height={20}
+          alt="."
+        />
       </Button>
     </form>
   );
