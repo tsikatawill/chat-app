@@ -1,16 +1,9 @@
 "use client";
-import {
-    useRef,
-    useLayoutEffect,
-    useState,
-    useOptimistic,
-    useEffect,
-} from "react";
+import { useRef, useLayoutEffect, useState } from "react";
 import { ChatItem } from "./chat-item";
 import { Chat } from "@prisma/client";
 import SupabaseListener from "./SupabaseListener";
 import useChatStore from "@/lib/store/chat-store";
-import { clear } from "console";
 function ChatList({ initialChatList }: { initialChatList: Chat[] }) {
     const chatListRef = useRef<HTMLDivElement>(null);
     const [chatList, setChatList] = useState<Chat[]>(initialChatList);

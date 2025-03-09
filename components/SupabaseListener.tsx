@@ -37,7 +37,7 @@ export default function SupabaseListener({
             channelRef.current?.unsubscribe();
             channelRef.current = null;
         };
-    }, []);
+    }, [onPayload]);
 
     return children;
 }
