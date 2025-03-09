@@ -1,3 +1,4 @@
+"use server";
 import prisma from "@/prisma";
 
 async function sendMessage(message: string) {
@@ -6,6 +7,11 @@ async function sendMessage(message: string) {
             message,
         },
     });
-
-    return { message };
 }
+
+async function getMessages() {
+    const messages = await prisma.chat.findMany();
+    return messages;
+}
+
+export { sendMessage, getMessages };
