@@ -6,3 +6,5 @@ export interface ChatItem {
   readStatus: ReadStatus;
   text: string;
 }
+
+export type Theme = "light" | "dark";
