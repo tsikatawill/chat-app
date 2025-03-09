@@ -4,8 +4,6 @@ import { getMessages } from "@/actions/chat-actions";
 export default async function Home() {
     const data = await getMessages();
 
-    console.log(data);
-
     return (
         <div
             className="h-screen flex flex-col overflow-hidden"
@@ -18,7 +16,7 @@ export default async function Home() {
                 <h1 className="font-semibold text-center text-2xl">Chat App</h1>
             </div>
 
-            <ChatArea />
+            <ChatArea chatList={data} />
         </div>
     );
 }
