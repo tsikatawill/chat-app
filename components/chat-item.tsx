@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import "react-initials-avatar/lib/ReactInitialsAvatar.css";
-import { cn } from "@/lib/utils";
+import { cn, formatDate } from "@/lib/utils";
 import { Chat } from "@prisma/client/edge";
 import { ReadStatus } from "@/lib/types";
 
@@ -12,10 +12,10 @@ export const ChatItem = ({ createdAt, message, id }: Chat) => {
     <div className={cn("flex flex-col gap-1", id === userId && "items-end")}>
       <div className="flex gap-3 items-center">
         <p className="font-semibold">John Doe</p>
-        <div className="flex gap-3 text-slate-500">
+        <div className="flex items-center gap-3 text-slate-500 dark:text-[#565656]">
           <span>•</span>
 
-          <p>{dayjs(createdAt).format("DD MMM - HH:mma")}</p>
+          <p>{formatDate(createdAt)}</p>
 
           {readStatus === "pending" ? (
             <svg
@@ -60,7 +60,8 @@ export const ChatItem = ({ createdAt, message, id }: Chat) => {
       <div
         className={cn(
           "p-4 border-gray-100 dark:border-transparent dark:shadow-none bg-white dark:text-[#7A7A7A] dark:bg-[#1C1C1C] rounded-2xl w-fit max-w-md border shadow-md shadow-gray-200",
-          id === userId && "bg-[#5881F9] text-white"
+          id === userId &&
+            "bg-[#5881F9] dark:bg-[#5881F9] dark:text-white text-white"
         )}
       >
         {message}
