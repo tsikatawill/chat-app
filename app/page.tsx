@@ -14,6 +14,7 @@ export default async function Home() {
             }}
         >
             <ChatHeader />
+            <ChatHeader />
             <ChatArea chatList={data} />
             <p className="text-center py-6">Built with ❤️ by Team Wazaaa</p>
         </div>
