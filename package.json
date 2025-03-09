@@ -7,7 +7,11 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "predev": "pnpm prisma generate"
+        "predev": "pnpm prisma generate",
+        "build:worker": "opennextjs-cloudflare",
+        "dev:worker": "wrangler dev --port 8771",
+        "preview:worker": "npm run build:worker && npm run dev:worker",
+        "deploy:worker": "npm run build:worker && wrangler deploy"
     },
     "dependencies": {
         "@prisma/client": "6.4.1",
@@ -25,6 +29,7 @@
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3",
+        "@opennextjs/cloudflare": "^0.5.9",
         "@tailwindcss/postcss": "^4",
         "@types/node": "^20.17.24",
         "@types/react": "^19",
