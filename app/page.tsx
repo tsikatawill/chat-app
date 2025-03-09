@@ -6,7 +6,7 @@ export default async function Home() {
     <>
       <ChatHeader />
       <div
-        className="h-screen flex flex-col overflow-hidden"
+        className="h-screen flex flex-col overflow-hidden bg-[url('/images/main-bg.jpg')] dark:bg-[image:var(--background)] bg-center bg-cover bg-no-repeat"
         // style={{
         //   background: "url(images/main-bg.jpg) center center/cover no-repeat",
         // }}
