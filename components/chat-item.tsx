@@ -65,11 +65,7 @@ export const ChatItem = ({ createdAt, message, id }: Chat) => {
                         id === userId && "bg-[#5881F9] text-white"
                     )}
                 >
-                    {message} Lorem ipsum dolor sit, amet consectetur
-                    adipisicing elit. Ratione error, molestiae architecto
-                    molestias expedita, debitis commodi nihil iusto libero quis
-                    veniam possimus, voluptatibus vitae neque in amet velit et
-                    perferendis.
+                    {message}
                 </div>
             </div>
         </div>
