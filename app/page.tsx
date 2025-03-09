@@ -1,6 +1,5 @@
 import { ChatArea } from "@/components/chat-area";
 import { getMessages } from "@/actions/chat-actions";
-import Image from "next/image";
 import ChatHeader from "@/components/chat-header";
 
 export default async function Home() {
