@@ -1,9 +1,27 @@
-import Image from "next/image";
+import { ChatArea } from "@/components/chat-area";
+import prisma from "@/prisma";
 
-export default function Home() {
+export default async function Home() {
+
+  const data = await prisma.chat.findMany({
+    take: 10,
+  });
+
+  console.log(data);
+  
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <h1 className="font-semibold text-2xl">Chat App</h1>
+    <div
+      className="h-screen flex flex-col overflow-hidden"
+      // style={{
+      //   background:
+      //     "linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url(assets/bg.jpg)",
+      // }}
+    >
+      <div className="py-6 bg-white">
+        <h1 className="font-semibold text-center text-2xl">Chat App</h1>
+      </div>
+
+      <ChatArea />
     </div>
   );
 }
