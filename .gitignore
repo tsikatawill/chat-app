@@ -40,10 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# open-next
+.open-next
+
 # env
 .env
 .env.local
 .env.production
-
-# open-next
-.open-next
