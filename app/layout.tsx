@@ -4,7 +4,8 @@ import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "BuildSync",
-  description: "Let's talk!",
+  description:
+    "A collaborative chat platform for developers, designers, and product teams to connect, discuss, and build together seamlessly.",
 };
 
 export default function RootLayout({
