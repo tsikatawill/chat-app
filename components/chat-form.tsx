@@ -1,7 +1,7 @@
 "use client";
+import { sendMessage } from "@/app/actions";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
-import { sendMessage } from "@/actions/chat-actions";
 import useChatStore from "@/lib/store/chat-store";
 import Image from "next/image";
 import { useRef } from "react";
