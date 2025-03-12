@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ThemeSwitch } from "./theme-switch";
+import { PushNotificationManager } from "./push-notification-manager";
 
 function ChatHeader() {
   return (
@@ -25,7 +26,10 @@ function ChatHeader() {
           </div>
         </div>
 
-        <ThemeSwitch />
+        <div className="flex items-center gap-2">
+          <PushNotificationManager />
+          <ThemeSwitch />
+        </div>
       </div>
     </div>
   );

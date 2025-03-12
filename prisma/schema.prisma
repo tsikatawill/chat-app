@@ -14,3 +14,13 @@ model Chat {
   updatedAt DateTime @updatedAt
   message   String
 }
+
+model PushNotifSubscription {
+id        String   @id @default(cuid())
+endpoint  String   @unique
+p256dh    String   
+auth      String   
+userId    String?
+createdAt DateTime @default(now())
+updatedAt DateTime @updatedAt
+}
