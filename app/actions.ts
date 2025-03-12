@@ -75,7 +75,7 @@ export async function sendNotification(message: string) {
             badge: "/images/512.png",
           })
         );
-        console.log({ success: true, endpoint: sub.endpoint });
+        // console.log({ success: true, endpoint: sub.endpoint });
         return { success: true, endpoint: sub.endpoint };
       } catch (error: any) {
         console.error(
@@ -92,9 +92,9 @@ export async function sendNotification(message: string) {
             await prisma.pushNotifSubscription.delete({
               where: { endpoint: sub.endpoint },
             });
-            console.log(`Removed invalid subscription: ${sub.endpoint}`);
+            // console.log(`Removed invalid subscription: ${sub.endpoint}`);
           } catch (deleteError) {
-            console.error(`Failed to delete subscription: ${deleteError}`);
+            // console.error(`Failed to delete subscription: ${deleteError}`);
           }
         }
 
